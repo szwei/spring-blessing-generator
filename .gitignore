@@ -8,8 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
 *.local
 
 # Editor directories and files
@@ -29,8 +27,3 @@ dist-ssr
 .env.production.local
 .env.development.local
 .env.test.local
-
-# Build output
-dist
-build
-.output

@@ -68,7 +68,8 @@
         <div class="blessing-content">
           <div class="blessing-text">{{ generatedBlessing }}</div>
           <div class="blessing-footer">
-            <span class="blessing-signature">—— {{ form.name || '福满人间' }} 敬上</span>
+            <span v-if="form.name" class="blessing-recipient">致：{{ form.name }}</span>
+            <span class="blessing-signature">—— 福满人间 敬上</span>
             <span class="blessing-date">{{ currentDate }}</span>
           </div>
         </div>
@@ -315,13 +316,23 @@ const resetForm = () => {
 }
 
 .blessing-footer {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
   color: #666;
   font-size: 14px;
+  margin-top: 30px;
+}
+
+.blessing-recipient {
+  color: #e74c3c;
+  font-weight: 500;
 }
 
 .blessing-signature {
-  margin-right: 20px;
+  color: #333;
+  font-weight: 500;
 }
 
 .blessing-date {
